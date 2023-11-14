@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+
+
+        :root {
+            --primaryColor: #FB8F1D;
+            --secondaryColor: #202336;
+            --themeFont: "Inter";
+            --secondaryFont: "Playfair";
+        }
+
+        .shopping_universal * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--themeFont);
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .shopping_container {
+            max-width: 1340px;
+            margin: 0 auto;
+            padding: 0px 20px;
+        }
+
+        .shiping_cart_main_section {
+            padding: 100px 0px;
+        }
+
+        .shipping_poruct_title_wrapper,
+        .shipping_poruct_wrapper {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+
+        }
+
+        .shipping_poruct_wrapper {
+            padding: 0px 0px 40px 5px;
+            border-bottom: 1px solid #F6F7F8;
+        }
+
+        .shipping_poruct_title_wrapper {
+            padding: 5px 0px 30px 5px;
+            border-bottom: 1px solid #F6F7F8;
+        }
+
+        .selected_product_wrapper,
+        .selected_product_price_wrapper,
+        .QTY_control_main_wrapper,
+        .unit_price_main_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .product_remove_svg {
+            height: 30px;
+            width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .plus_qunatity,
+        .minus_qunatity {
+            height: 25px;
+            width: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .quantity_inner_content_wrapper {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            gap: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="shiping_cart_main_section shopping_universal">
+
+        <div class="shipping_cart_main_wrapper">
+            <div class="shopping_container">
+                <div class="shipping_cart_inner_content_wrapper">
+                    <div class="shipping_poruct_title_wrapper">
+                        <div class="product_name_wrapper">
+                            <span class="product_name">Products</span>
+                        </div>
+                        <div class="product_price_wrapper">
+                            <span class="product_price">Price</span>
+                        </div>
+                        <div class="product_Quantity_wrapper">
+                            <span class="product_Quantity"> QTY</span>
+                        </div>
+                        <div class="product_unit_price_wrapper">
+                            <span class="product_unit_price">Unit Price</span>
+                        </div>
+                    </div>
+                    <div class="shipping_poruct_wrapper">
+                        <div class="selected_product_wrapper">
+                            <div class="product_remove_svg_wrapper">
+                                <span class="product_remove_svg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+                                        <g id="del" transform="translate(-1454 -74)">
+                                            <circle id="base" cx="11" cy="11" r="11" transform="translate(1454 74)"
+                                                fill="#ff6875" opacity="0.05" />
+                                            <g id="x" transform="translate(1 1)">
+                                                <rect id="Rectangle_21" data-name="Rectangle 21" width="1" height="11"
+                                                    transform="translate(1467.778 80) rotate(45)" fill="#ff4252" />
+                                                <rect id="Rectangle_22" data-name="Rectangle 22" width="1" height="11"
+                                                    transform="translate(1468.485 87.778) rotate(135)" fill="#ff4252" />
+                                            </g>
+                                        </g>
+                                    </svg>
+
+                                </span>
+                            </div>
+                            <div class="selected_product_img_wrapper">
+                                <img class="selected_product_img" src="./Asset/Image/Rectangle 5.png" alt="">
+                            </div>
+                            <div class="selected_product_name_wrapper">
+                                <span class="selected_product_name">Philips Hue 7W BR30 Connected Downlight Lamp </span>
+                            </div>
+                        </div>
+                        <div class="selected_product_price_wrapper">
+                            <div class="price_curency_wrapper">
+                                <span class="price_curency">$</span>
+                                <span class="unite_price" id="unite_price_id">999</span>
+                            </div>
+                        </div>
+                        <div class="QTY_control_main_wrapper">
+                            <div class="quantity_inner_content_wrapper">
+                                <div class="minus_qunatity" id="minus_qunatity_id"><svg xmlns="http://www.w3.org/2000/svg"
+                                        width="8" height="2" viewBox="0 0 8 2">
+                                        <rect id="Rectangle_11_copy_3" data-name="Rectangle 11 copy 3" width="8"
+                                            height="2" fill="#33a0ff" />
+                                    </svg>
+
+                                </div>
+                                <div class="product_quantity_number_wrapper">
+                                    <span class="product_quantity_number" id="product_quantity_number_id">1</span>
+                                </div>
+                                <div class="plus_qunatity" id="plus_qunatity_id">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                                        <g id="Group_27" data-name="Group 27" transform="translate(-852 -649)">
+                                            <rect id="Rectangle_11_copy_3" data-name="Rectangle 11 copy 3" width="8"
+                                                height="2" transform="translate(852 652)" fill="#33a0ff" />
+                                            <rect id="Rectangle_11_copy_3-2" data-name="Rectangle 11 copy 3" width="8"
+                                                height="2" transform="translate(857 649) rotate(90)" fill="#33a0ff" />
+                                        </g>
+                                    </svg>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="unit_price_main_wrapper">
+                            <div class="unit_price_wrapper">
+                                <span class="price_curency">$</span>
+                                <span class="single_product_price">350</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="./shopping.js"></script>
+</body>
+
+</html>
