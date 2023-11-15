@@ -91,6 +91,22 @@
             justify-content: center;
             gap: 30px;
         }
+
+        .cartSubTotal_main_wrapper {
+            padding-top: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sub_total_text {
+            padding: 25px 80px;
+        }
+        .delivery_location_wrappaer{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding-top: 20px;
+        }
     </style>
 </head>
 
@@ -100,6 +116,7 @@
         <div class="shipping_cart_main_wrapper">
             <div class="shopping_container">
                 <div class="shipping_cart_inner_content_wrapper">
+
                     <div class="shipping_poruct_title_wrapper">
                         <div class="product_name_wrapper">
                             <span class="product_name">Products</span>
@@ -143,13 +160,13 @@
                         <div class="selected_product_price_wrapper">
                             <div class="price_curency_wrapper">
                                 <span class="price_curency">$</span>
-                                <span class="unite_price" id="unite_price_id">999</span>
+                                <span class="unite_price" id="unite_price_id">350</span>
                             </div>
                         </div>
                         <div class="QTY_control_main_wrapper">
                             <div class="quantity_inner_content_wrapper">
-                                <div class="minus_qunatity" id="minus_qunatity_id"><svg xmlns="http://www.w3.org/2000/svg"
-                                        width="8" height="2" viewBox="0 0 8 2">
+                                <div class="minus_qunatity" id="minus_qunatity_id"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="8" height="2" viewBox="0 0 8 2">
                                         <rect id="Rectangle_11_copy_3" data-name="Rectangle 11 copy 3" width="8"
                                             height="2" fill="#33a0ff" />
                                     </svg>
@@ -176,6 +193,53 @@
                                 <span class="price_curency">$</span>
                                 <span class="single_product_price">350</span>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="cartSubTotal_main_wrapper">
+                        <div class="cupon_code_field_wrapper">
+                            <input class="cupon_field" placeholder="Voucher code">
+                            <button id="apply_cuppon_btn">Redeem</button>
+                        </div>
+
+                        <div class="delivery_area_selction_wrapper">
+                            <form action="/action_page.php">
+                                <p>Please select your shipping area</p>
+                                <div class="delivery_location_wrappaer">
+                                    <div class="first_option_wrapper">
+                                        <input type="radio" id="insideDhaka" name="delivery_area" value="60" checked>
+                                        <label for="insideDhaka">Inside Dhaka</label><br>
+                                    </div>
+                                    <div class="second_option_wrapper">
+                                        <input type="radio" id="outsideDHaka" name="delivery_area"
+                                            value="120">
+                                        <label for="outsideDHaka">Outside Dhaka</label><br>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="sub_total_inner_content_wrapper">
+                            <table style="border-bottom: 1px solid red;">
+                                <tr>
+                                    <td class="sub_total_text">subtotal</td>
+                                    <td><span class="curency">$</span><span id="sub_total_amount_id">350</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="sub_total_text">Shipping fee</td>
+                                    <td><span class="curency">$</span><span id="shippin_charge">0</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #202336;">
+                                    <td class="sub_total_text">Cupon</td>
+                                    <td><span class="curency"></span><span id="cupon_id">No</span></td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="sub_total_text">Total</td>
+                                    <td><span class="curency">$</span><span class="payableAmount">180</span></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
